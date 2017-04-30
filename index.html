@@ -3087,7 +3087,7 @@ A nearby sign lists the accomplishments of those who have entered before you.]
 (set: $ally to (datamap: &quot;type&quot;, &quot;none&quot;, &quot;health&quot;, 0))\
 (set: $cards to (array: &quot;ghost&quot;, &quot;poop&quot;, &quot;badFood&quot;, &quot;watermelon&quot;, &quot;energy&quot;, &quot;satan&quot;, &quot;potion&quot;, &quot;altar&quot;, &quot;presents&quot;, &quot;tiles&quot;, &quot;hunger&quot;, &quot;slime&quot;, &quot;monsters1&quot;, &quot;doors&quot;, &quot;treasureChest&quot;, &quot;catFoe&quot;))\
 (set: $uncommonCards to (array: &quot;confide&quot;, &quot;ethicsTome&quot;, &quot;Compass&quot;, &quot;sloth&quot;, &quot;guitar&quot;))\
-(set: $rareCards to (array: &quot;tapestry&quot;, &quot;jargo&quot;, &quot;bibleopoly&quot;, &quot;Painting&quot;, &quot;Candies&quot;, &quot;tornado&quot;, &quot;fairy&quot;, &quot;hatFind&quot;, &quot;Convention&quot;, &quot;deathDoor&quot;, &quot;elephant&quot;, &quot;spikes&quot;, &quot;dog&quot;))\
+(set: $rareCards to (array: &quot;tapestry&quot;, &quot;jargo&quot;, &quot;bibleopoly&quot;, &quot;Painting&quot;, &quot;Candies&quot;, &quot;tornado&quot;, &quot;fairy&quot;, &quot;hatFind&quot;, &quot;Convention&quot;, &quot;deathDoor&quot;, &quot;elephant&quot;, &quot;spikes&quot;, &quot;dog&quot;, &quot;buffy&quot;, &quot;donation&quot;))\
 (set: $untouchables to (array: &quot;couch&quot;, &quot;peckishCure&quot;, &quot;debugMenagerie&quot;, &quot;ethicsTome&quot;, &quot;pirates&quot;, &quot;Blessed&quot;, &quot;headband&quot;, &quot;blessings&quot;, &quot;saveGame&quot;, &quot;keyFind&quot;, &quot;Painting&quot;, &quot;Candies&quot;, &quot;tornado&quot;, &quot;confide&quot;, &quot;bibleopoly&quot;, &quot;sergeGuide&quot;, &quot;fairy&quot;, &quot;hole&quot;, &quot;deathDoor&quot;, &quot;Convention&quot;, &quot;hatFind&quot;, &quot;demon&quot;, &quot;jargo&quot;, &quot;strangeBrew&quot;, &quot;descentNote&quot;) + $rareCards + $uncommonCards)\
 (set: $tiles to (shuffled: ...(array: &quot;The Grey Wolf&quot;, &quot;The Red Dragon&quot;, &quot;The Roaring Lion&quot;, &quot;The Black Stag&quot;, &quot;The Woolly Sheep&quot;, &quot;The Silver Fish&quot;, &quot;The White Tree&quot;, &quot;The Golden Rose&quot;)))\
 (set: $safeTiles to (array: $tiles&#x27;s 1st) + (array: $tiles&#x27;s 2nd) + (array: $tiles&#x27;s 3rd))\
@@ -3395,7 +3395,7 @@ But your mind jitters.
 You&#x27;re like marbles on glass.
 
 (set: $energy to it + 20)(set: $sanity to it - 15)\
-[[What&#x27;s next?|Main]]</tw-passagedata><tw-passagedata pid="18" name="satan" tags="" position="723,372">A battered copy of a satanic bible scuttles across the floor like a crab.
+[[What&#x27;s next?|Main]]</tw-passagedata><tw-passagedata pid="18" name="satan" tags="" position="723,372">A demonic-looking book scuttles across the floor like a crab.
 
 (set: $delayExecute to &quot;(set: $energy to it - 5)&quot;)\
 [[Sweet, a free book]]
@@ -3587,7 +3587,7 @@ He pauses. A droplet of water falls from his nose and splashes into the puddle a
 (set: $HP to it - 15)\
 (set: $sanity to it - 15)\
 (set: $satiety to it - 15)\
-[[I understand|Main]]</tw-passagedata><tw-passagedata pid="49" name="spikes" tags="" position="1052,786">(if: (random: 1, 5) &lt;=$spikeAwareness)[You are beginning to notice things about this dungeon that you didn&#x27;t before. For instance: there is almost certainly a spike pit hidden under that rug.
+[[I understand|Main]]</tw-passagedata><tw-passagedata pid="49" name="spikes" tags="" position="1052,786">(if: (random: 1, 4) &lt;=$spikeAwareness)[You are beginning to notice things about this dungeon that you didn&#x27;t before. For instance: there is almost certainly a spike pit hidden under that rug.
 
 [[Walk around it|Main]]
 [[Step on it anyway]]]\
@@ -3595,7 +3595,9 @@ He pauses. A droplet of water falls from his nose and splashes into the puddle a
 
 (set: $delayExecute to &quot;(set: $HP to it - 12))&quot;)\
 (set: $spikeAwareness to it + 1)\
-[[Limp on|Main]]]</tw-passagedata><tw-passagedata pid="50" name="Appease it with a sacrifice" tags="" position="1214,1459">You place a hand on the shrine. When you lift it back up you feel weaker. Wearier. Your bones ache; your gums bleed. But the sensation of being watched by some ancient power is gone.
+[[Limp on.|Main]]&lt;script&gt;
+audio.ouch.play();
+&lt;/script&gt;]</tw-passagedata><tw-passagedata pid="50" name="Appease it with a sacrifice" tags="" position="1214,1459">You place a hand on the shrine. When you lift it back up you feel weaker. Wearier. Your bones ache; your gums bleed. But the sensation of being watched by some ancient power is gone.
 
 (set: $HP to it - (random:15,25))\
 (set: $energy to it - (random:15,25))\
@@ -4461,7 +4463,7 @@ Happy birthday!
 (save-game:&quot;Slot A&quot;)\
 [[Down, down, down.|Main]]&lt;script&gt;
 stopaudio();
-audio.otherworld.play();
+audio.adrenaline.play();
 &lt;/script&gt;</tw-passagedata><tw-passagedata pid="167" name="Blessing of snacking" tags="" position="2084,54">You&#x27;re not sure why, but whenever you reach into your pockets you find chocolate-coated coffee beans.
 
 (set: $blessings to it + (array: &quot;snacking&quot;))\
@@ -4646,7 +4648,7 @@ audio.adrenalineLoop.play();
 
 You begin to bound down the stairs two or three at a time, depleting reserves of energy that you didn&#x27;t know you had.
 
-When you reach the bottom you find the source of the light: a solitary candle, planted firmly in a chocolate birthday cake.&lt;script&gt;
+When you reach the bottom you find the source of the light: a solitary candle, planted firmly in a chocolate birthday cake. It illuminates the words &#x27;Happy Birthday Nick&#x27;, written neatly across the top in pink icing.&lt;script&gt;
 stopaudio();
 audio.happyEnd.play();
 &lt;/script&gt;
@@ -4844,7 +4846,7 @@ Where will you find the strength?
 (set: $satiety to it + 25)]\
 [[Onwards!|Main]]</tw-passagedata><tw-passagedata pid="227" name="Candies" tags="" position="2444,2164">You find some candies.
 
-(set: $cards to it - (array: &quot;Candies&quot;))(set: $delayExecute to &quot;(set: $satiety to it + 12)&quot;)\
+(set: $delayExecute to &quot;(set: $satiety to it + 12)&quot;)\
 [[Eat them|Main]]
 [[Throw them on the ground]]</tw-passagedata><tw-passagedata pid="228" name="Throw them on the ground" tags="" position="2519,2305">(set: $delayExecute to false)\
 [[You threw them on the ground.|Main]]</tw-passagedata><tw-passagedata pid="229" name="Take the foul-smelling brew" tags="" position="2403,1584">(set: $strangeBrew to 1)(set: $teaTally to 0)\
@@ -4852,8 +4854,7 @@ It has the consistency of mud and a scent like ash, yet it tastes deeply wholeso
 
 *You are now enjoying the effects of an unusual brew.*
 
-[[Onwards!|Main]]</tw-passagedata><tw-passagedata pid="230" name="strangeBrew" tags="" position="2399,1693">(set: $strangeBrew to 0)(set: $cards to it - (array: &quot;strangeBrew&quot;))\
-The effects of the tea have worn off.
+[[Onwards!|Main]]</tw-passagedata><tw-passagedata pid="230" name="strangeBrew" tags="" position="2399,1693">The effects of the tea have worn off.(set: $delayExecute to &quot;(set: $strangeBrew to 0)&quot;)
 
 [[Oh well.|Main]]</tw-passagedata><tw-passagedata pid="231" name="tornado" tags="" position="720,2595">You are overcome by sudden sadness. You were once tournament champion in China. You were once a threat all over Europe. The world was once your playground.
 
@@ -4897,13 +4898,16 @@ audio.ouch.play();
 (elseif: $playerVariables&#x27;s 2nd is &quot;satiety&quot;)[(set: $satiety to it - $door&#x27;s 2nd)]\
 You gain (print: $door&#x27;s 1st) (print: $playerVariables&#x27;s 1st) and lose (print: $door&#x27;s 2nd) (print: $playerVariables&#x27;s 2nd).
 
-[[Onwards!|Main]]</tw-passagedata><tw-passagedata pid="238" name="fairy" tags="" position="2859,2244">An assortment of creatures in waistcoats and ballgowns are dancing to what sounds like Nordic folk music. The room is lit by moonlight. (Moonlight? But how can that be this far underground?)
+[[Onwards!|Main]]</tw-passagedata><tw-passagedata pid="238" name="fairy" tags="" position="2859,2244">An assortment of creatures in waistcoats and ballgowns are dancing to otherwordly music. The room is lit by moonlight. (Moonlight? But how can that be this far underground?)
 
 (set: $uncommonCards to it - (array: &quot;fairy&quot;))\
 [[Eat the food.]]
 [[Drink the wine.]](if: $inventory contains &quot;godStains&quot;)[
 [[Boast of your epicurean accomplishments]]]
-[[Take nothing. Eat nothing.]]</tw-passagedata><tw-passagedata pid="239" name="Eat the food." tags="" position="2719,2375">Everything here is delicious. You eat until you can eat no more. You eat until the music fades and the banquet is gone and you are back in the dungeon once more.
+[[Take nothing. Eat nothing.]]&lt;script&gt;
+stopaudio();
+audio.otherworld.play();
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="239" name="Eat the food." tags="" position="2719,2375">Everything here is delicious. You eat until you can eat no more. You eat until the music fades and the banquet is gone and you are back in the dungeon once more.
 
 (set: $satiety to $statMax)\
 (set: $cards to it + (array: &quot;fairy2&quot;))\
@@ -4913,13 +4917,16 @@ By the time you finish the party is over, the guests are gone, and the plates ar
 
 (set: $HP to 100)\
 (set: $cards to it + (array: &quot;fairy2&quot;))\
-[[Onwards!|Main]]</tw-passagedata><tw-passagedata pid="241" name="fairy2" tags="" position="3185,2075">You hear the strains of familiar nordic music.
+[[Onwards!|Main]]</tw-passagedata><tw-passagedata pid="241" name="fairy2" tags="" position="3185,2075">You hear the familiar strains of a strange and otherworldly tune.
 
 (if: $sanity &lt; 70)[You begin to follow it dreamily. (If you were more lucid you may have been able to resist.)
 
 ]\
 [[Rejoin the ball.]](if: $sanity &gt;= 70)[
-[[Ignore the music.]]]</tw-passagedata><tw-passagedata pid="242" name="Rejoin the ball." tags="" position="3118,2290">You dance with (either: &quot;an alluring&quot;, &quot;a lithe&quot;, &quot;a sensuous&quot;, &quot;an articulate&quot;, &quot;a gelatinous&quot;, &quot;a timid&quot;, &quot;a heavily-accented&quot;, &quot;a green&quot;) (either: &quot;gargoyle&quot;, &quot;troll&quot;, &quot;slime-temptress&quot;, &quot;serpent&quot;, &quot;fox&quot;, &quot;fairy&quot;) for what feels like hours, though when the dance finally ends no time at all appears to have passed.
+[[Ignore the music.]]]&lt;script&gt;
+stopaudio();
+audio.otherworld.play();
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="242" name="Rejoin the ball." tags="" position="3118,2290">You dance with (either: &quot;an alluring&quot;, &quot;a lithe&quot;, &quot;a sensuous&quot;, &quot;an articulate&quot;, &quot;a gelatinous&quot;, &quot;a timid&quot;, &quot;a heavily-accented&quot;, &quot;a green&quot;) (either: &quot;gargoyle&quot;, &quot;troll&quot;, &quot;slime-temptress&quot;, &quot;serpent&quot;, &quot;fox&quot;, &quot;fairy&quot;) for what feels like hours, though when the dance finally ends no time at all appears to have passed.
 
 (set: $energy to it - (random: 10,15))\
 (set: $delayExecute to &quot;(set: $turns to it - 1)&quot;)\
@@ -5323,6 +5330,30 @@ Sluggishly you walk towards the next room.
 [[Onwards!|Main]]</tw-passagedata><tw-passagedata pid="306" name="Eat the bone" tags="" position="221,3277">That can&#x27;t be healthy.
 
 (set: $satiety to it + 15)(set: $HP to it - 10)\
+[[Onwards!|Main]]</tw-passagedata><tw-passagedata pid="307" name="buffy" tags="" position="2981.3333333333335,2762.9544876981395">A vampire broods handsomely deep in the shadows of the room. If only you were a Slayer you might stand a chance fighting it. But as things stand, your only chance is to run.
+
+[[Run!]]</tw-passagedata><tw-passagedata pid="308" name="donation" tags="" position="3389.666666666667,2844.621154364806">You find a shrine devoted to Diglas, the patron saint of dungeongoers. The word &#x27;donations&#x27; is written inside a white square on the floor.
+
+[[Stand in the square]]
+[[Don&#x27;t stand in the sqaure|Main]]</tw-passagedata><tw-passagedata pid="309" name="Run!" tags="" position="2981.3333333333335,2912.9544876981395">It doesn&#x27;t even attempt to give chase. It&#x27;s almost as though it doesn&#x27;t want to hurt you. It&#x27;s almost as though it&#x27;s not a soulless monster.
+
+No. Surely not. Whoever heard of a vampire having a soul?
+
+(set: $energy to it - 5)\
+[[Onwards!|Main]]</tw-passagedata><tw-passagedata pid="310" name="Stand in the square" tags="" position="3389.666666666667,2994.621154364806">(set: $HP to it - 10)\
+(set: $sanity to it - 10)\
+(set: $energy to it - 10)\
+(set: $satiety to it - 10)\
+(set: $cards to it + (array: &quot;donationReward&quot;))\
+[[Ouch|Main]]&lt;script&gt;
+audio.ouch.play();
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="311" name="donationReward" tags="" position="3510.3333333333335,2994.621154364806">You unexpectedly come across a cache of useful things. It&#x27;s almost as if some celestial being is looking out for you.
+
+(set: $HP to it + 20)\
+(set: $sanity to it + 20)\
+(set: $energy to it + 20)\
+(set: $satiety to it + 20)\
+(set: $cards to it - (array: &quot;donationReward&quot;))\
 [[Onwards!|Main]]</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,o=!1,i=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){o=!0,i=e}finally{try{!r&&s.return&&s.return()}finally{if(o)throw i}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol?"symbol":typeof e};!function(){/**
