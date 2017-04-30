@@ -156,6 +156,7 @@ tw-link:hover, enchantment-link:hover /* sets both hover link colors */
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">/*!
  *  howler.js v2.0.0
  *  howlerjs.com
@@ -3030,6 +3031,7 @@ tw-link:hover, enchantment-link:hover /* sets both hover link colors */
 
 
 
+
 </script><tw-passagedata pid="1" name="init" tags="hide-footer" position="622,686">It is your eighteenth birthday. You have inherited the keys to a birthday dungeon. The entry lies at your feet. (if: $achievements is not (array: &quot;&quot;))[
 
 A nearby sign lists the accomplishments of those who have entered before you.]
@@ -4691,9 +4693,11 @@ With the process completed, your legs feel stronger and more agile. Let&#x27;s s
 [[Onwards!|Main]]</tw-passagedata><tw-passagedata pid="204" name="Read" tags="" position="2208,2313">(set: $badTome to it + 1)\
 (set: $sanity to it + 1)\
 (if: $badTome &gt;=100)[(go-to: &quot;Finish Reading&quot;)]\
-(if: (random: 1,120) is 1 and $poopKey is 0)[This page yields some unexpected and highly valuable information: there is a key carefully concealed in the wall behind one of the dungeon&#x27;s couches, just ready for the taking.
+(if: (random: 1,100) is 1 and $poopKey is 0)[This page yields some unexpected and highly valuable information: there is a key carefully concealed in the wall behind one of the dungeon&#x27;s couches, just ready for the taking.
 
 And now you know where to look.
+
+&#x27;&#x27;A secret has been revealed to you.&#x27;&#x27;
 (set: $poopKey to 1)]\
 (else:)[(either: &quot;How interesting!&quot;, &quot;You never knew that!&quot;, &quot;What a cogent argument!&quot;, &quot;You find yourself agreeing with this chapter&#x27;s thesis.&quot;, &quot;You find yourself disagreeing with this chapter&#x27;s thesis.&quot;, &quot;Another page?&quot;, &quot;Fascinating!&quot;, &quot;What a well-chosen collection of papers.&quot;, &quot;This author&#x27;s institutional affiliation is especially impressive.&quot;, &quot;What an under-appreciated field of study.&quot;, &quot;What a well-chosen quotation!&quot;, &quot;This section has an especially strong concluding paragraph.&quot;, &quot;You find yourself wanting to learn more about the ethics of dungeoneering.&quot;, &quot;You would normally only expect this kind of quality from a university press.&quot;, &quot;This chapter contains at least five neologisms. And they&#x27;re all amazing!&quot;, &quot;The pages fly by.&quot;,&quot;This page was written entirely in the passive voice.&quot;, &quot;How erudite!&quot;)]
 
@@ -4928,11 +4932,11 @@ By the time you finish the party is over, the guests are gone, and the plates ar
 [[Ignore the music.]]]&lt;script&gt;
 stopaudio();
 audio.otherworld.play();
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="242" name="Rejoin the ball." tags="" position="3118,2290">You dance with (either: &quot;an alluring&quot;, &quot;a lithe&quot;, &quot;a sensuous&quot;, &quot;an articulate&quot;, &quot;a gelatinous&quot;, &quot;a timid&quot;, &quot;a heavily-accented&quot;, &quot;a green&quot;) (either: &quot;gargoyle&quot;, &quot;troll&quot;, &quot;slime-temptress&quot;, &quot;serpent&quot;, &quot;fox&quot;, &quot;fairy&quot;) for what feels like hours, though when the dance finally ends no time at all appears to have passed.
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="242" name="Rejoin the ball." tags="" position="3139.6666666666665,2235">You dance with (either: &quot;an alluring&quot;, &quot;a lithe&quot;, &quot;a sensuous&quot;, &quot;an articulate&quot;, &quot;a gelatinous&quot;, &quot;a timid&quot;, &quot;a heavily-accented&quot;, &quot;a green&quot;) (either: &quot;gargoyle&quot;, &quot;troll&quot;, &quot;slime-temptress&quot;, &quot;serpent&quot;, &quot;fox&quot;, &quot;fairy&quot;) for what feels like hours, though when the dance finally ends no time at all appears to have passed.
 
 (set: $energy to it - (random: 10,15))\
 (set: $delayExecute to &quot;(set: $turns to it - 1)&quot;)\
-[[Onwards!|Main]]</tw-passagedata><tw-passagedata pid="243" name="Ignore the music." tags="" position="3268,2290">Though it costs you dearly to do so, you exorcise all thought and memory of the ball from your mind.
+[[Onwards!|Main]]</tw-passagedata><tw-passagedata pid="243" name="Ignore the music." tags="" position="3304.6666666666665,2238.3333333333335">Though it costs you dearly to do so, you exorcise all thought and memory of the ball from your mind.
 
 You don&#x27;t hear the music again.
 
@@ -5156,12 +5160,12 @@ If only you weren&#x27;t so damned peckish.
 [[Onwards!|Main]]</tw-passagedata><tw-passagedata pid="278" name="farNorth" tags="" position="1204,3039">You have reached the Northernmost reaches of the dungeon. There is nothing for you here.
 
 (set: $marked to it + (array: &quot;North&quot;))\
-(set: $direction&#x27;s distance to 0)\
+(set: $direction&#x27;s direction to &quot;none&quot;)\
 [[Leave|Main]]</tw-passagedata><tw-passagedata pid="279" name="farEast" tags="" position="1320,3036">You have reached the Easternmost part of the dungeon. You find nothing, but the sense of having diligently achieved a goal is rewarding enough in its own right.
 
 (set: $sanity to it + 25)\
 (set: $marked to it + (array: &quot;East&quot;))\
-(set: $direction&#x27;s distance to 0)\
+(set: $direction&#x27;s direction to &quot;none&quot;)\
 [[Leave|Main]]</tw-passagedata><tw-passagedata pid="280" name="guitar" tags="" position="1869,2976">Somebody has abandoned a weathered yet functional guitar in this room.
 
 (set: $randomiser to (random: 1,5))(if: $randomiser is 1)[Something seems to be stuck inside.
@@ -5176,11 +5180,11 @@ If only you weren&#x27;t so damned peckish.
 
 (set: $sanity to it - 20)\
 (set: $marked to it + (array: &quot;West&quot;))\
-(set: $direction&#x27;s distance to 0)\
+(set: $direction&#x27;s direction to &quot;none&quot;)\
 [[Leave this place, your confidence shattered|Main]]</tw-passagedata><tw-passagedata pid="283" name="farSouth" tags="" position="1436,3037">This seems to be as far South as the dungeon extends. And look: a treasure chest, lying unlocked on the floor!
 
 (set: $marked to it + (array: &quot;South&quot;))\
-(set: $direction&#x27;s distance to 0)\
+(set: $direction&#x27;s direction to &quot;none&quot;)\
 (set: $gift to (array: &quot;[[Average juice]]&quot;,&quot;[[Dynamite]]&quot;,&quot;[[Breadcrumbs]]&quot;,&quot;[[Key]]&quot;))\
 (if: $ankh is 0)[(set: $gift to it + (array: &quot;[[A metal cross with a handle]]&quot;))]\
 (if: not ($inventory contains &quot;runners&quot;))[(set: $gift to it + (array: &quot;[[New runners]]&quot;))]\
@@ -5304,7 +5308,7 @@ This is great fun.
 (set: $sanity to it + 3)\
 [[Onwards.|Main]]</tw-passagedata><tw-passagedata pid="299" name="elephant" tags="" position="2062,2762">It&#x27;s an elemental elephant! It attacks using carbon, hydrogen, nitrogen and oxygen.
 
-(set: $monster to (datamap: &quot;fleeChance&quot;, 58, &quot;damage&quot;, 20))\
+(set: $monster to (datamap: &quot;fleeChance&quot;, 68, &quot;damage&quot;, 20))\
 (display: &quot;monster&quot;)</tw-passagedata><tw-passagedata pid="300" name="dog" tags="" position="226,2997">It&#x27;s a german shepherd! It wags its tail and drops a bone at your feet.
 
 [[Give it a pat]]
