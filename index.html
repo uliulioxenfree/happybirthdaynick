@@ -155,6 +155,7 @@ tw-link:hover, enchantment-link:hover /* sets both hover link colors */
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">/*!
  *  howler.js v2.0.0
  *  howlerjs.com
@@ -3028,6 +3029,7 @@ tw-link:hover, enchantment-link:hover /* sets both hover link colors */
 
 
 
+
 </script><tw-passagedata pid="1" name="init" tags="hide-footer" position="622,686">It is your eighteenth birthday. You have inherited the keys to a birthday dungeon. The entry lies at your feet. (if: $achievements is not (array: &quot;&quot;))[
 
 A nearby sign lists the accomplishments of those who have entered before you.]
@@ -4820,10 +4822,10 @@ But you are marching East. You have no time for chitchat.
 [[Onwards!|Main]]</tw-passagedata><tw-passagedata pid="224" name="Confide a shameful secret" tags="" position="1593,2543">(if: (random: 1,2) is 1)[A familiar sense of shame settles over you.
 
 (set: $sanity to it - 12)]\
-(else:)[Writing it down is cathartic. You feel a weight lift from your mind.
+(else:)[Speaking about it is unexpectedly cathartic. You feel a weight lift from your mind.
 
 (set: $sanity to it + 25)]\
-[[Onwards!|Main]]</tw-passagedata><tw-passagedata pid="225" name="Confide an abandoned ambition" tags="" position="1743,2543">(if: (random: 1,2) is 1)[Writing it down reminds you of the effort you devoted to the task. 
+[[Onwards!|Main]]</tw-passagedata><tw-passagedata pid="225" name="Confide an abandoned ambition" tags="" position="1743,2543">(if: (random: 1,2) is 1)[Speaking about it reminds you of the effort you devoted to the task. 
 
 Is this what awaits you should you escape the dungeon? More futile endeavours? More fruitless labour? More unmet ambitions?
 
@@ -5193,7 +5195,7 @@ You can spot something ensared even deeper within the web. It looks like (if: $g
 [[Push on|Main]]</tw-passagedata><tw-passagedata pid="285" name="Try to reach it" tags="" position="841,1034">The web here is denser and stickier. Progress is slow and difficult. With mounting dread you wonder if something is monitoring your thrashing movements and preparing to stalk its way over to you. 
 
 With great effort you manage to grab your loot, turn around, and extricate yourself from the web.
-(set: $sanity to it - 18)\
+(set: $sanity to it - 15)\
 
 [[What have you found?|(print: 1st of (shuffled: ...$gift))]]</tw-passagedata><tw-passagedata pid="286" name="(print: 1st of (shuffled: ...$gift))" tags="" position="839,1237">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="287" name="Play a happy song" tags="" position="1742,3111">You strum an invigorating tune. With every passing moment you feel more resolute, more purposeful, and more blinded by zeal.
 
@@ -5320,10 +5322,10 @@ Sluggishly you walk towards the next room.
 [[Onwards!|Main]]</tw-passagedata><tw-passagedata pid="306" name="Eat the bone" tags="" position="221,3277">That can&#x27;t be healthy.
 
 (set: $satiety to it + 15)(set: $HP to it - 10)\
-[[Onwards!|Main]]</tw-passagedata><tw-passagedata pid="307" name="library" tags="" position="3204.166666666667,2826.3333333333335">You enter a library, of sorts. The shelves are lined with video games. You recognise none of the titles. Here&#x27;s one called &#x27;Pteranadome&#x27; (tag line: two pteranadons enter, one leaves.) This one is called &#x27;Bat Mobilizer.&#x27; Another is called &#x27;RollRace.&#x27; Here&#x27;s &#x27;Person Simulator.&#x27; And here&#x27;s &#x27;Terror-Dactyl!&#x27;
+[[Onwards!|Main]]</tw-passagedata><tw-passagedata pid="307" name="library" tags="" position="3204,2826">You enter a library, of sorts. The shelves are lined with video games. You recognise none of the titles. Here&#x27;s one called &#x27;Pteranadome&#x27; (tag line: two pteranadons enter, one leaves.) This one is called &#x27;Bat Mobilizer.&#x27; Another is called &#x27;RollRace.&#x27; Here&#x27;s &#x27;Person Simulator.&#x27; And here&#x27;s &#x27;Terror-Dactyl!&#x27;
 
 [[Examine the titles more closely]]
-[[Leave|Main]]</tw-passagedata><tw-passagedata pid="308" name="Examine the titles more closely" tags="" position="3134.166666666667,2981.3333333333335">(set: $randomiser to (random: 1,8))\
+[[Leave|Main]]</tw-passagedata><tw-passagedata pid="308" name="Examine the titles more closely" tags="" position="3134,2981">(set: $randomiser to (random: 1,8))\
 (if: $randomiser is 1)[This one looks easy. (set: $HP to it + 10)]\
 (if: $randomiser is 2)[This one looks punishingly difficult. (set: $HP to it - 8)]\
 (if: $randomiser is 3)[This one looks exciting. (set: $energy to it + 10)]\
@@ -5335,9 +5337,9 @@ Sluggishly you walk towards the next room.
 
 (display: &quot;deathable&quot;)
 [[Keep browsing|Examine the titles more closely]]
-[[Leave the library]]</tw-passagedata><tw-passagedata pid="309" name="Leave the library" tags="" position="3090.8333333333335,3138">You feel strangely changed by your time in the library.
+[[Leave the library]]</tw-passagedata><tw-passagedata pid="309" name="Leave the library" tags="" position="3090,3138">You feel strangely changed by your time in the library.
 
-[[Onwards!|Main]]</tw-passagedata><tw-passagedata pid="310" name="deathable" tags="" position="3294.045414090749,3033.560542503338">(if: $energy &lt;1)[(go-to: &quot;You are dead&quot;)]\
+[[Onwards!|Main]]</tw-passagedata><tw-passagedata pid="310" name="deathable" tags="" position="3294,3033">(if: $energy &lt;1)[(go-to: &quot;You are dead&quot;)]\
 (if: $HP &lt;1)[(go-to: &quot;You are dead&quot;)]\
 (if: $satiety &lt;1)[(go-to: &quot;You are dead&quot;)]\
 (if: $sanity &lt;1)[(go-to: &quot;You are insane&quot;)]\
